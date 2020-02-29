@@ -9,8 +9,8 @@ To fix the messed up .bashrc file start here:
 1. Backup your current .bashrc file with 
 ```cp ~/.bashrc ~/.bashrc.bak```
 2. Copy the skeleton .bashrc file over the existing screwy one:
-  `cp /etc/skel/.bashrc ~/`
+  ```cp /etc/skel/.bashrc ~/```
 3. Then load the new one:
-  `source ~/.bashrc`
+  ```source ~/.bashrc```
 
 
