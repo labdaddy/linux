@@ -1,6 +1,6 @@
 # linux-tips
 
-## Fix a messed up .bashrc file in UBUNTU
+### Fix a messed up .bashrc file in UBUNTU
 In case of accidental .bashrc file mistakery, restore to default settings. from the backup provided by the system.
 In Ubuntu the default version of the .bashrc file is stored in the /etc/skel/ directory.
 
