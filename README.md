@@ -1,4 +1,5 @@
-# linux-tips
+# Linux Tips and Tricks
+
 
 ### Fix a messed up .bashrc file in UBUNTU
 In case of accidental .bashrc file mistakery, restore to default settings. from the backup provided by the system.
