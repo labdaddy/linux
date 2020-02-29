@@ -5,6 +5,7 @@ In Ubuntu the default version of the .bashrc file is stored in the /etc/skel/ di
 To fix the messed up .bashrc file start here:
 
 1. Backup your current .bashrc file with 
+
   ```
   cp ~/.bashrc ~/.bashrc.bak
   ```
