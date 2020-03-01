@@ -30,7 +30,7 @@ This outpt is clear, concise and immediately useful.
 Command line utility for partition manipulation. Beyond the scope of this tips document.
 
 # df
-Disk Free. Outputs filesystem informatio, size of the partition, storage used/ available/ % used/ partition mounted on.
+Disk Free. Outputs filesystem information, size of the partition, storage used/ storage available/ % used/ partition mounted on etc
 
 # pydf
 Almost identical to df but more visually appealing. With colors.
