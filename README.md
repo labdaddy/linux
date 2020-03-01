@@ -41,6 +41,6 @@ This command lists out all the storage blocks, which includes disk partitions an
 # blkid
 Prints the block device (partitions and storage media) attributes like uuid and file system type. Does not report the space on the partitions.
 
-# hwThe 
+# hwinfo 
 The hwinfo command is a general purpose hardware information tool and can be used to print out the disk and partition list. The output however does not print details about each partition like some of the other commands above.
 
