@@ -15,12 +15,17 @@ To fix the messed up .bashrc file:
   ```source ~/.bashrc```
   
 # UBUNTU To view grub menu during boot, hold down right shift key
+To edit the grub menu settings type: vi /etc/default/grub
+Change the value in GRUB_TIMEOUT_STYLE to menu
+Change the value on GRUB_TIMEOUT to -1
+Save changes and exit
+Now type sudo update-grub
 
 # RHEL/ CentOS Modify grub menu defaults:
 Edit the default file in /etc/default/grub like so:
 vi /etc/default/grub
-# edit the line that says GRUB_TIMEOUT=
-# change the timeout interval to whatever suits
+edit the line that says GRUB_TIMEOUT=
+change the timeout interval to whatever suits
 
 
 
