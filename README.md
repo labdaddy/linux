@@ -13,6 +13,15 @@ To fix the messed up .bashrc file:
   ```cp /etc/skel/.bashrc ~/```
 3. Then load the new one:
   ```source ~/.bashrc```
+  
+# UBUNTU To view grub menu during boot, hold down right shift key
+
+# RHEL/ CentOS Modify grub menu defaults:
+Edit the default file in /etc/default/grub like so:
+vi /etc/default/grub
+# edit the line that says GRUB_TIMEOUT=
+# change the timeout interval to whatever suits
+
 
 
 ### Interrogate the system for drive partition and storage info
