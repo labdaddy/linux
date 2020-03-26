@@ -22,10 +22,10 @@ To fix the messed up .bashrc file:
 5. Now type sudo update-grub
 
 # RHEL/ CentOS Modify grub menu defaults:
-Edit the default file in /etc/default/grub like so:
-vi /etc/default/grub
-edit the line that says GRUB_TIMEOUT=
-change the timeout interval to whatever suits
+1. Edit the default file in /etc/default/grub like so:
+2. vi /etc/default/grub
+3. Edit the line that says GRUB_TIMEOUT=
+4. Change the timeout interval to whatever suits
 
 
 
