@@ -27,6 +27,17 @@ To fix the messed up .bashrc file:
 3. Edit the line that says GRUB_TIMEOUT=
 4. Change the timeout interval to whatever suits
 
+# Navigating the command line
+
+Ctrl+a move to beginning of line
+Ctrl+e move to end of line
+Ctrl+left arrow/ alt+b/ move back one word
+Ctrl+right arrow/ alt+c move forward one word
+Ctrl+k deletes text from cursor to end of line
+Ctrl+x deletes text from cursor to beginning of line
+Tab
+Ctrl+d exits the bash she'll
+
 
 
 ### Interrogate the system for drive partition and storage info
