@@ -29,14 +29,13 @@ To fix the messed up .bashrc file:
 
 # Navigating the command line
 
-Ctrl+a move to beginning of line
-Ctrl+e move to end of line
-Ctrl+left arrow/ alt+b/ move back one word
-Ctrl+right arrow/ alt+c move forward one word
-Ctrl+k deletes text from cursor to end of line
-Ctrl+x deletes text from cursor to beginning of line
-Tab
-Ctrl+d exits the bash she'll
+1. Ctrl+a move to beginning of line
+2. Ctrl+e move to end of line
+3. Ctrl+left arrow/ alt+b/ move back one word
+4. Ctrl+right arrow/ alt+c move forward one word
+5. Ctrl+k deletes text from cursor to end of line
+6. Ctrl+x deletes text from cursor to beginning of line
+7. Ctrl+d exits the bash she'll
 
 
 
