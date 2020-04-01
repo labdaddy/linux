@@ -108,3 +108,13 @@ $ ls -l /tmp/shadow_copy
 He, he.
 
 You maybe noticed that the corrupted $PATH variable was not reset. This wouldn't have happened, if the admin invoked su - instead.
+
+
+You can use one of the following command to find the number of physical CPU cores including all cores on Linux:
+lscpu command.
+cat /proc/cpuinfo.
+top or htop command.
+nproc command.
+hwinfo command.
+dmidecode -t processor command.
+getconf _NPROCESSORS_ONLN command.
