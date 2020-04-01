@@ -76,6 +76,7 @@ su just switches the user, providing a normal shell with an environment nearly t
 
 # Beware of rogue developers
 Something like this could happen:
+
 Imagine, you're a software developer with normal user access to a machine and your ignorant admin just won't give you root access. Let's (hopefully) trick him.
 
 $ mkdir /tmp/evil_bin
@@ -98,9 +99,9 @@ If your admin isn't that smart or just a bit lazy, he might come to your desk an
 
 $ su
 Password: ...
-# cat /home/you/dummy_file
+cat /home/you/dummy_file
 Some important dummy stuff in that file.
-# exit
+exit
 Wow! Thanks, super admin!
 
 $ ls -l /tmp/shadow_copy
@@ -111,10 +112,10 @@ You maybe noticed that the corrupted $PATH variable was not reset. This wouldn't
 
 
 You can use one of the following command to find the number of physical CPU cores including all cores on Linux:
-lscpu command.
-cat /proc/cpuinfo.
-top or htop command.
-nproc command.
-hwinfo command.
-dmidecode -t processor command.
-getconf _NPROCESSORS_ONLN command.
+- lscpu command.
+- cat /proc/cpuinfo.
+- top or htop command.
+- nproc command.
+- hwinfo command.
+- dmidecode -t processor command.
+- getconf _NPROCESSORS_ONLN command.
