@@ -60,7 +60,7 @@ Disk Free. Outputs filesystem information, size of the partition, storage used/ 
 Almost identical to df but more visually appealing. With colors.
 
 # lsblk
-This command lists out all the storage blocks, which includes disk partitions and optical drives including the mount point and size of the drive.
+This command lists out all the storage blocks, which includes disk partitions and optical drives including the mount point and size of the drive. This command also shows the drives and partitions in a tree format much like the tree command,
 
 # blkid
 Prints the block device (partitions and storage media) attributes like uuid and file system type. Does not report the space on the partitions.
