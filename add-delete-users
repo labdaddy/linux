@@ -1,8 +1,0 @@
-#### To add a user
-- login as root or su to root
-- useradd username
-- passwd username
-
-#### To delete user
-- login as root or su to root
-- userdel -r username
