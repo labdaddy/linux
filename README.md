@@ -1,7 +1,7 @@
-# Linux Tips and Tricks
+### Linux Tips and Tricks
 
 
-### Fix a messed up .bashrc file in UBUNTU
+#### Fix a messed up .bashrc file in UBUNTU
 In case of accidental .bashrc file mistakery you can restore to default settings from the backup provided by the system.
 In Ubuntu the default version of the .bashrc file is stored in the /etc/skel directory.
 
@@ -14,20 +14,20 @@ To fix the messed up .bashrc file:
 3. Then load the new one:
   ```source ~/.bashrc```
   
-# UBUNTU To view grub menu during boot, hold down right shift key
+### UBUNTU To view grub menu during boot, hold down right shift key
 1. To edit the grub menu settings type: vi /etc/default/grub
 2. Change the value in GRUB_TIMEOUT_STYLE to menu
 3. Change the value on GRUB_TIMEOUT to -1
 4. Save changes and exit
 5. Now type sudo update-grub
 
-# RHEL/ CentOS Modify grub menu defaults:
+### RHEL/ CentOS Modify grub menu defaults:
 1. Edit the default file in /etc/default/grub like so:
 2. vi /etc/default/grub
 3. Edit the line that says GRUB_TIMEOUT=
 4. Change the timeout interval to whatever suits
 
-# Navigating the command line
+### Navigating the command line
 
 1. Ctrl+a move to beginning of line
 2. Ctrl+e move to end of line
