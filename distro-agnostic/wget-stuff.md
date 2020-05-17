@@ -1,5 +1,5 @@
 #### WGET is super cool. Use it to download music, backup a website, easily deal with flaky connections and even cook yourself chicken parm.
-For the official docs at the gnu website: `https://www.gnu.org/software/wget/manual/`
+For the official docs at the [gnu website](https://www.gnu.org/software/wget/manual/)
 
 I did not create the content below. It was copied directly from lifehacker.com All rights reserved by lifehacker.com:
 ##### Mirror an entire web site
