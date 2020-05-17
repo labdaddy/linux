@@ -6,3 +6,4 @@
 - hwinfo command.
 - dmidecode -t processor command.
 - getconf _NPROCESSORS_ONLN command.
+
