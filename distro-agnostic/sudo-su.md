@@ -1,4 +1,4 @@
-#### su vs su -
+### su vs su -
 NOTE: for the official business see the [sudo website](https://www.sudo.ws/man/1.8.28/sudo.man.html) for their in depth documentation.
 - `su` by itself switches the user, providing a normal shell with an environment nearly the same as with the old user except now with elevated priveleges.
 - `su -` invokes a login shell after switching the user. A login shell resets most environment variables, providing a clean base and the evironment of the root user.
