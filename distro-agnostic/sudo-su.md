@@ -1,5 +1,6 @@
 ## su vs su -
 NOTE: for the official business see the [sudo website](https://www.sudo.ws/man/1.8.28/sudo.man.html) for their in depth documentation.
+
 From the sudo website:
 Sudo in a Nutshell
 Sudo (su "do") allows a system administrator to give certain users (or groups of users) the ability to run some (or all) commands as root while logging all commands and arguments. Sudo operates on a per-command basis, it is not a replacement for the shell. Its features include:
