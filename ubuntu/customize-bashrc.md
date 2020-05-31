@@ -1,4 +1,5 @@
-#### NOTE: This information is copied directly from the Ubuntu help page at [Customizing bash prompt](https://help.ubuntu.com/community/CustomizingBashPrompt) In the .bashrc file Locate this if / then statement:
+#### NOTE: This information is copied directly from the Ubuntu help page at [Customizing bash prompt](https://help.ubuntu.com/community/CustomizingBashPrompt) 
+#### In the .bashrc file Locate this if / then statement:
 - `if [ "$color_prompt" = yes ]; then
     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
