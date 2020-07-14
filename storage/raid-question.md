@@ -1,4 +1,4 @@
-#####Question about additional disks asked online: 
+##### Question about additional disks asked online: 
 
 where is the second hard disk in my CentOS?
 yesterday I installed CentOS on my machine.There are two hard disk(SCSI) in my machine,but after installing,I used "fdisk -l"command to check disks only find one disk has been mounted.I also have check out the /dev directory,only find sda.Theorectically,there should exist sda and sdb under /dev.I have found some materials on the internet,maybe I must re-scan my disk,but how to re-scan? Anybody has encountered the same problem before?Or anybody could help me to use the second hard disk?
