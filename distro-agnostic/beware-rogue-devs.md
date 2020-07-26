@@ -1,7 +1,7 @@
-# Beware of rogue developers
+### sysadmin-notes# Beware of rogue developers
 Something like this could happen:
 
-Imagine, you're a software developer with normal user access to a machine and your ignorant admin just won't give you root access. Let's (hopefully) trick him.
+"Imagine, you're a software developer with normal user access to a machine and your ignorant admin just won't give you root access. Let's (hopefully) trick him.
 
 $ mkdir /tmp/evil_bin
 $ vi /tmp/evil_bin/cat
@@ -32,4 +32,5 @@ $ ls -l /tmp/shadow_copy
 -rw-r--r-- 1 root root 1093 2011-02-07 13:02 /tmp/shadow_copy
 He, he.
 
-You maybe noticed that the corrupted $PATH variable was not reset. This wouldn't have happened, if the admin invoked su - instead.
+You maybe noticed that the corrupted $PATH variable was not reset. This wouldn't have happened, if the admin invoked su - instead."
+Some people are like that. So beware.
