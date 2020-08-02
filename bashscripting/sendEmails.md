@@ -16,7 +16,7 @@ This is a super long command so lets script it instead.
  11 SUBJECT="This is a test"
  12 
  13 sendEmail -f $SMTPFROM -t $SMTPTO -u $SUBJECT -m $MESSAGEBODY -s $SMTPSERVER -xu $SMTP    USER -xp $SMTPPASS`
- 
- `chmod +x {scriptname}`
+
+ `chmod +x {scriptname}`.
  
  
