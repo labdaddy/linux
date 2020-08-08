@@ -128,12 +128,12 @@ Now you should have a tun device when you show interfaces (# ip a). Next step is
 
 SSH Client Side:
 
-localhost:~# ip addr add 10.10.10.2/32 peer 10.10.10.10 dev tun0
-localhost:~# ip tun0 up
+localhost:# ip addr add 10.10.10.2/32 peer 10.10.10.10 dev tun0
+localhost:# ip tun0 up
 SSH Server Side:
 
-remoteserver:~# ip addr add 10.10.10.10/32 peer 10.10.10.2 dev tun0
-remoteserver:~# ip tun0 up
+remoteserver:# ip addr add 10.10.10.10/32 peer 10.10.10.2 dev tun0
+remoteserver:# ip tun0 up
 Now we should have a direct route to the other host (route -n and ping 10.10.10.10).
 
 It is now possible to route any subnet through the other side host.
@@ -255,7 +255,7 @@ See our 8 minute guide to getting started with Google Authenticator and SSH.
 20. Bouncing through jump hosts with ssh and -J
 When network segmentation means you are jumping through multiple ssh hosts to get to a final destination network or host, this jump host shortcut might be just what you need. Requires OpenSSH version 7.3+.
 
-localhost:~$ ssh -J host1,host2,host3 user@host4.internal
+localhost:$ ssh -J host1,host2,host3 user@host4.internal
 A key thing to understand here is that this is not the same as ssh host1 then user@host1:~$ ssh host2, the -J jump parameter uses forwarding trickery so that the localhost is establishing the session with the next host in the chain. So our localhost is authenticating with host4 in the above example; meaning our localhost keys are used and the session from localhost to host4 is encrypted end to end.
 
 To use this ability in the ssh_config use the ProxyJump configuration option. If you regularly have to jump through multiple hosts; use the config file and your alias to host4 will save you a lot of time.
