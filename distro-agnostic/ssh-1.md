@@ -38,3 +38,7 @@
 - use the search function in your editor to search for ChallengeResponse and mv to the ChallengeResponseAuthentication line and make sure it is no
 - move down to PasswordAuthentication and change that to no as well
 - move down to the UsaPAM line and make sure it is also set to no
+
+**Make the changes stick**
+- `sudo service ssh restart`
+- verify with netstat -tulpn, should return a connection listing port 22 as LISTEN
