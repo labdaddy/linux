@@ -101,7 +101,7 @@ With this ssh session established a connection to the remoteserver port 1999 wil
 5. SSH Reverse Proxy
 In this case we are establishing a SOCKS proxy with our ssh connection, however the proxy is listening at the remote server end. With connections to that remote socks proxy now emerging from the tunnel as traffic originating from our localhost. Requires OpenSSH version 7.6+.
 
-localhost:~$ ssh -v -R 0.0.0.0:1999 192.168.1.100 user@remoteserver
+localhost:$ ssh -v -R 0.0.0.0:1999 192.168.1.100 user@remoteserver
 Troubleshooting Remote SSH Tunnels
 If you are having trouble getting the remote SSH options to work, check with netstat which interface the listening port is attached too. Even though we have specified 0.0.0.0 in the above examples, if GatewayPorts is set to no in the sshd_config then the listener will only bind to localhost (127.0.0.1).
 
