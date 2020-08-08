@@ -1,4 +1,4 @@
-##### SSH COMMANDS
+##### SSH Secure Setup (key based not password based)
 
 **Install SSH client and server**
 - `sudo apt-get install openssh-client` or `sudo -y yum install openssh-client`
