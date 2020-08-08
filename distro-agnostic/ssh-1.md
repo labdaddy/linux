@@ -31,3 +31,10 @@
 
 **Copy the key (on remote machine) to authorized file**
 - `cp id_rsa.pub .ssh/authorized_keys`
+
+**Turnoff password based logins**
+- open the /etc/ssh/sshd_config in your text editor
+- move down to the Port line and change to 443. This allows us to use the server for tunneling such as a SOCKS proxy
+- use the search function in your editor to search for ChallengeResponse and mv to the ChallengeResponseAuthentication line and make sure it is no
+- move down to PasswordAuthentication and change that to no as well
+- move down to the UsaPAM line and make sure it is also set to no
