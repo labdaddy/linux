@@ -28,3 +28,6 @@
 - login to the remote machine and ls -a on the directory you chose to scp the public key into.
 - The id_rsa.pub file should be listed along with the .ssh directory
 - Then, to secure this you want to make the root user the only one who has any rights to this file with: `chmod -R 700 .ssh`
+
+**Copy the key (on remote machine) to authorized file**
+- `cp id_rsa.pub .ssh/authorized_keys`
