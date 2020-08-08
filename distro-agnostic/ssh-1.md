@@ -1,5 +1,11 @@
 ##### SSH Secure Setup (key based not password based)
 
+**High level summary**
+1. Create a client SSH key with the `ssh-keygen` command
+2. Make sure remote server can accept key based authentication
+3. Remove option for password based authentication (for greater security)
+4. Share the client public key with the server in the USERS home directory (`/.ssh/authorized_keys`)
+
 **Install SSH client and server**
 - `sudo apt-get install openssh-client` or `sudo -y yum install openssh-client`
 -`sudo apt-get install openssh-server` or `sudo -y yum install openssh-server `
