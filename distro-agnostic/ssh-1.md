@@ -42,3 +42,9 @@
 **Make the changes stick**
 - `sudo service ssh restart`
 - verify with netstat -tulpn, should return a connection listing port 22 as LISTEN
+
+
+**Make sure password based authentication is BLOCKED and only key based ALLOWED**
+- ssh to the remote machine
+- enter the password. Server should respond with `Permission denied (publickey).`
+- ssh to this machine again and this time enter the passphrase you setup for the public key. Now the server should allow access.
