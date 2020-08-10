@@ -26,7 +26,7 @@ For the client:
 - On even newer distros that use systemd type: `sudo systemctl restart sshd`
 
 
-For the server:
+**For the server**
 -
 
 
