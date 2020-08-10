@@ -16,7 +16,7 @@ For the client:
 - On newer distros type: `service sshd restart`
 - On even newer distros that use systemd type: `sudo systemctl restart sshd`
 
-For the server:
+**For the server**
 - 
 
 **Restarting SSH client and server**
