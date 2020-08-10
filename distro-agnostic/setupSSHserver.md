@@ -27,8 +27,9 @@ For the client:
 
 
 ##### For the server
--
-
+- On older distros type: `sudo /etc/init.d/ssh restart`
+- On newer distros type: `sudo service ssh restart`
+- On even newer distros that use systemd type: `sudo systemctl restart ssh`
 
 
 ##### Creating Keys
