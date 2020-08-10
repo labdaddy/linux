@@ -1,4 +1,4 @@
-###TMUX STUFF
+### TMUX STUFF
 
 ##### PREFIX 
 - A prefix in tmux is a signal sent to tmux to tell it to do something. The prefix command is `ctlr+b`.
@@ -8,7 +8,6 @@
 - To exit a tmux session press the `prefix` then `d`
 - To return to a tmux session type: `tmux attach`
 - To return to a specific tmux session type: `tmux attach -t 1` (to attach to session 1) or `tmux attach -t 2` (to attach to session 2 and so on). Also the `tmux attach` command can be abbreviated to `tmux a`. 
-
 
 ##### SPLITS
 - To split the screen horizontally press: `prefix` then immediately press `"`
@@ -25,7 +24,6 @@ To navigate between panes using the keyboard: `prefix` then arrow (up, down, lef
 - To kill a window press `prefix` then & then `y`.
 - To change the name of a window (for easier idenfication) `prefix` then `,`. Tmux will ask you to rename the window (down in the bottom bar). The name will change right away
 
-
 ##### SESSIONS
 - To disconnect a tmux session press `prefix` then `d` (for disconnect).
 - To navigate between  
@@ -33,7 +31,6 @@ To navigate between panes using the keyboard: `prefix` then arrow (up, down, lef
 - To view sessions in a different way press: `prefix` then s (for sessions). 
 - You can navigate within the listed sessions view with the up and down arrows. This scrolls through the open sessions and also shows a preview of the contents of each session as you scroll through.
 - To enter one of the sessions simply highlight it by arrowing up or down to it and then press `enter`.
-- 
 
 ##### VIEWING TMUX INFO
 - Type `tmux list-sessions` or `tmux ls`
