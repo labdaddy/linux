@@ -2,12 +2,13 @@
 
 ##### PREFIX 
 - A prefix in tmux is a signal sent to tmux to tell it to do something. The prefix command is `ctlr+b`.
+- To change the `prefix` from the default `ctrl+b` to something better suited to human hands you can modify this in the tmux config file. Open `.tmux.conf	 in your favorite text editor. 
 
 ##### GENERAL TMUX COMMANDS
 - To exit a tmux session press the `prefix` then `d`
 - To return to a tmux session type: `tmux attach`
 - To return to a specific tmux session type: `tmux attach -t 1` (to attach to session 1) or `tmux attach -t 2` (to attach to session 2 and so on). Also the `tmux attach` command can be abbreviated to `tmux a`. 
-- To change the `prefix` from the default `ctrl+b` to something better suited to human hands you can modify this in the tmux config file. Open `.tmux.conf	 in your favorite text editor. 
+
 
 ##### SPLITS
 - To split the screen horizontally press: `prefix` then immediately press `"`
