@@ -30,6 +30,13 @@
 - It will ask for your password, enter it.
 - Then the id_rsa.pub file will be displayed on the terminal indicating that it has been copied over.
 
+**Send key to another machine using ssh-copy-id**
+- `ssh-copy-id` `-i` `~/.ssh/id_rsa.pub` `192.168.100.25 ` (enter the target machine ip address)
+- Machine will ask for your password
+- Then machine will note that 1 key was addedd
+- Now to test, ssh into the target machine with: `ssh 10.24.167.41` or whatever the target machine's IP address is.
+- You should be granted access directly to the machine with NO password request.
+
 **Securing the key on the remote machine**
 - login to the remote machine and ls -a on the directory you chose to scp the public key into.
 - The id_rsa.pub file should be listed along with the .ssh directory
