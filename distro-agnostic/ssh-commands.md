@@ -1,4 +1,4 @@
-##### Starting the SSH client or server
+#### Starting the SSH client or server
 **For the client**
 On older distros type: /etc/init.d/sshd restart
 On newer distros type: service sshd restart
