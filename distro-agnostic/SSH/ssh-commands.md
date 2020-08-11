@@ -1,8 +1,8 @@
 #### Starting the SSH client or server
 **Start client**
-- On older distros type: `/etc/init.d/sshd restart`
-- On newer distros type: `service sshd restart`
-- On even newer distros that use systemd type: `sudo systemctl restart sshd`
+- On older distros type: `/etc/init.d/sshd start`
+- On newer distros type: `service sshd start`
+- On even newer distros that use systemd type: `sudo systemctl start sshd`
 
 **Start server options**
 - `sudo /etc/init.d/ssh start`
