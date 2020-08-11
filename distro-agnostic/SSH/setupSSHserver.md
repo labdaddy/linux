@@ -7,8 +7,10 @@
 4. Share the client public key with the server in the USERS home directory (`/.ssh/authorized_keys`)
 
 ##### Install SSH client and server
-- `sudo apt-get install openssh-client` or `sudo -y yum install openssh-client`
--`sudo apt-get install openssh-server` or `sudo -y yum install openssh-server `
+- `sudo apt-get install openssh-client` or 
+- `sudo -y yum install openssh-client`
+- `sudo apt-get install openssh-server` or 
+- `sudo -y yum install openssh-server `
 
 
 ##### Creating Keys
