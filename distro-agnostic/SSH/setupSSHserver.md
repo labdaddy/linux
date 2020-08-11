@@ -33,7 +33,7 @@
 ##### Send key to another machine using ssh-copy-id
 - `ssh-copy-id` `-i` `~/.ssh/id_rsa.pub` `192.168.100.25 ` (enter the target machine ip address)
 - Machine will ask for your password
-- Then machine will note that 1 key was addedd
+- Then machine will note that 1 key was added
 - Now to test, ssh into the target machine with: `ssh 10.24.167.41` or whatever the target machine's IP address is.
 - You should be granted access directly to the machine with NO password request.
 
