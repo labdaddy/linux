@@ -1,0 +1,7 @@
+##### Install google chrome on centos 8 and Ubuntu 20
+
+On CentOS 8
+- Open terminal and type: `wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm`
+- Then type" sudo dnf localinstall google-chrome-stable_current_x86_64.rpm`
+- The system will prompt for password. Enter and voila !
+Chrome is installed
