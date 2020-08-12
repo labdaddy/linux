@@ -12,22 +12,26 @@
 - `sudo apt-get install openssh-server` or 
 - `sudo yum -y install openssh-server `
 
-##### Start, stop, restart and check status - SSH
+##### Start, stop, restart, check status and enable at startup - SSH
+**Start**
 - `sudo systemctl start ssh` or
 - `sudo service sshd start` or
 - `sudo /etc/init.d/ssh start`
-
+**Stop**
 - `sudo systemctl stop ssh` or
 - `sudo service sshd stop` or
 - `sudo /etc/init.d/ssh stop`
-
+**Restart**
 - `sudo systemctl restart ssh`
 - `sudo service ssh restart`
 - `sudo /etc/init.d/ssh restart`
-
+**Check Status**
 - `sudo systemctl status ssh`
 - `sudo service ssh status`
 - `sudo /etc/init.d/ssh status`
+**Enable at startup**
+- `sudo systemctl enable sshd`
+
 
 ##### Creating Keys
 - `ssh-keygen -t rsa -b 8192`. 
