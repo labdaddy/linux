@@ -1,8 +1,8 @@
-####To Recover the root password
+#### To Recover the root password
 - Reboot the machine
 - Press up or down arrow to pause the grub menu
 - Press the 'e' key to edit the grub entry
-- Scroll down to the line that begins with 'linx 16'
+- Scroll down to the line that begins with 'linux 16'
 - Skip to the end of the line with: `ctrl-e`
 - Delete the last two words, 'rhgb' and 'quiet' so you can watch the boot process.
 - Add the following: `rd.break` `enforcing=0` which will stop the boot process after it has completed the ram disk phase and tell SELinux to enter permissive mode so we can make changes to the password file outside of the normal environment.
