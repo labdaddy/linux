@@ -7,7 +7,7 @@
 - Delete the last two words, 'rhgb' and 'quiet' so you can watch the boot process.
 - Add the following: `rd.break` `enforcing=0` which will stop the boot process after it has completed the ram disk phase and tell SELinux to enter permissive mode so we can make changes to the password file outside of the normal environment.
 - Continue the boot process by typing: `ctrl-x`
-- Boot process will continue but only up to the point where you have access to the `switch_root:/#` prompt which comes right after the ram disk phase.
+- Boot process will continue but only up to the point where you have access to the new prompt which comes right after the ram disk phase. The new prompt looks like this: `switch_root:/#` 
 - `Ctrl-l` will put your prompt back up at the top of the screen for easy viewing while typing
 - Currently the filesystem is mounted as read-only and needs to be remounted as read-write. Type: `mount -o remount,rw /sysroot` and press enter.
 - Then create a false root that points to the sysrot directory: `chroot /sysroot`
