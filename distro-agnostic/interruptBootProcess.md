@@ -21,3 +21,27 @@
 - Enter your root password and voila! we are in business.
 - Next we changed the security context during this process (earlier when we added the `enforcing=o` line in the grub file) so it will need to be changed back with: `restorecon /etc/shadow` and press enter
 - Next to return to enforcing mode in selinux, type: `setenforce 1`
+
+
+
+#### Quickie version, just the commands
+- Reboot machine: `reboot`
+- Press `up` and `down` arrows sequentially
+- Press `e`
+- Skip to end with `ctrl` + `e`
+- Delete the words 'rhgb' and 'quiet'
+- Add the words 'rd.break' and 'enforcing=0'
+- Press `ctrl` + `x`
+- Move prompt to top of screen: `ctrl` + `l`
+- Type `mount -o remount,rw /sysroot`
+- Type `chroot /sysroot`
+- Type `passwd` and press `enter`
+- Type a new password and press `enter`
+- Type `exit`
+- Type `mount -o remount, ro /sysroot`
+- Type `exit`
+- Type the new root password
+- Open a terminal and type `restorecon /etc/shadow` and press `enter`
+- Then type `setenforce 1` and press `enter`
+- Then type `getenforce` and press `enter`
+Now done
