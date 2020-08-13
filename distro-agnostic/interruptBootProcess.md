@@ -9,9 +9,7 @@
 - Continue the boot process by typing: `ctrl-x`
 - Boot process will continue but only up to the point where you have access to the new prompt which comes right after the ram disk phase. The new prompt looks like this: `switch_root:/#` 
 - `Ctrl-l` will put your prompt back up at the top of the screen for easy viewing while typing
-- Currently the filesystem is mounted as read-only and needs to be remounted as read-write. 
-
-Type: `mount -o remount,rw /sysroot` and press enter.
+- Currently the filesystem is mounted as read-only and needs to be remounted as read-write. To remount the filesystem as read/ write type: `mount -o remount,rw /sysroot` then press `enter`.
 - Then create a false root that points to the sysrot directory: `chroot /sysroot`
 - The prompt changes to `sh-4.2` (or something similar, indicating the kernel version)
 - At the new prompt type: `passwd` to reset the root password
