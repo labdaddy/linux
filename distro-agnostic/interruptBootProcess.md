@@ -1,5 +1,5 @@
 #### To Recover the root password
-- Reboot the machine
+- Reboot the machine with: `reboot` command
 - Press up or down arrow to pause the grub menu
 - Press the 'e' key to edit the grub entry
 - Scroll down to the line that begins with 'linux 16'
