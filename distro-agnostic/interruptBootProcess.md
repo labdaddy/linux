@@ -38,7 +38,7 @@
 - Type `passwd` and press `enter`
 - Type a new password and press `enter`
 - Type `exit`
-- Type `mount -o remount, ro /sysroot`
+- Type `mount -o remount,ro /sysroot`
 - Type `exit`
 - Type the new root password
 - Open a terminal and type `restorecon /etc/shadow` and press `enter`
