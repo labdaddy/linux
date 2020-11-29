@@ -4,6 +4,7 @@ Breaking down the SSH Command Line
 The following ssh example command uses common parameters often seen when connecting to a remote SSH server.
 
 - `localhost:$ ssh -v -p 22 -C neo@remoteserver`
+
 - `-v` : Print debug information, particularly helpful when debugging an authentication problem. Can be used multiple times to print additional information.
 - `-p 22` : Specify which port to connect to on the remote SSH server. 22 is not required as this is the default, but if any other port is listening connect to it using the -p parameter. The listening port is configured in the sshd_config file using the Port 2222 format.
 - `-C` : Compression is enabled on the connection using this parameter. If you are using the terminal over a slow link or viewing lots of text this can speed up the connection as it will compress the data transferred on the fly.
