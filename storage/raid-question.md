@@ -1,11 +1,9 @@
 ##### Question about additional disks asked online: 
-
 where is the second hard disk in my CentOS?
-yesterday I installed CentOS on my machine.There are two hard disk(SCSI) in my machine,but after installing,I used "fdisk -l"command to check disks only find one disk has been mounted. I also have check out the /dev directory,only find sda. Theorectically,there should exist sda and sdb under /dev. I have found some materials on the internet,maybe I must re-scan my disk,but how to re-scan? Anybody has encountered the same problem before?Or anybody could help me to use the second hard disk?
+yesterday I installed CentOS on my machine.There are two hard disk(SCSI) in my machine,but after installing,I used "fdisk -l"command to check disks only find one disk has been mounted. I also have check out the /dev directory,only find sda. Theoretically,there should exist sda and sdb under /dev. I have found some materials on the internet,maybe I must re-scan my disk,but how to re-scan? Anybody has encountered the same problem before?Or anybody could help me to use the second hard disk?
 
 
 ##### Response:
-
 You have a RAID controller there, not a bare-disk SCSI controller. If you have it configured for a single RAID, it is going to present just a single SCSI device to the host system.
 
 If your RAID controller is configured as RAID-0, the host OS will see a single SCSI device whose size is equal to twice the size of the smallest disk in the RAID. That is, if you have two 1 TB disks in the RAID, it will appear to be 2 TB to the host OS.
