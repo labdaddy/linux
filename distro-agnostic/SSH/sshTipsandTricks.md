@@ -1,93 +1,93 @@
-First The Basics
+#### First The Basics
 Breaking down the SSH Command Line
 The following ssh example command uses common parameters often seen when connecting to a remote SSH server.
 
-localhost:$ ssh -v -p 22 -C neo@remoteserver
--v : Print debug information, particularly helpful when debugging an authentication problem. Can be used multiple times to print additional information.
--p 22 : Specify which port to connect to on the remote SSH server. 22 is not required as this is the default, but if any other port is listening connect to it using the -p parameter. The listening port is configured in the sshd_config file using the Port 2222 format.
--C : Compression is enabled on the connection using this parameter. If you are using the terminal over a slow link or viewing lots of text this can speed up the connection as it will compress the data transferred on the fly.
-neo@ : The string before the @ symbol denotes the username to authenticate with against the remote server. Leaving out the user@ will default to using the username of the account you are currently logged in to (~$ whoami). User can also be specified with the -l parameter.
-remoteserver : The hostname ssh is connecting to, this can be a fully qualified domain name, an IP address or any host in your local machines hosts file. To connect to a host that resolves to both IPv4 and IPv6 you can specify parameter -4 or -6 to the command line so it resolves correctly.
+`localhost:$ ssh -v -p 22 -C neo@remoteserver`
+`-v` : Print debug information, particularly helpful when debugging an authentication problem. Can be used multiple times to print additional information.
+`-p 22` : Specify which port to connect to on the remote SSH server. 22 is not required as this is the default, but if any other port is listening connect to it using the -p parameter. The listening port is configured in the sshd_config file using the Port 2222 format.
+`-C` : Compression is enabled on the connection using this parameter. If you are using the terminal over a slow link or viewing lots of text this can speed up the connection as it will compress the data transferred on the fly.
+`neo@ `: The string before the @ symbol denotes the username to authenticate with against the remote server. Leaving out the user@ will default to using the username of the account you are currently logged in to (~$ whoami). User can also be specified with the -l parameter.
+`remoteserver` : The hostname ssh is connecting to, this can be a fully qualified domain name, an IP address or any host in your local machines hosts file. To connect to a host that resolves to both IPv4 and IPv6 you can specify parameter -4 or -6 to the command line so it resolves correctly.
 
 Apart from remoteserver, each of the above parameters is optional.
 
-Using a Configuration File
-While many users are familiar with the sshd_config file, there is also a client configuration file for the ssh command. This defaults to ~/.ssh/config but can also be specified as a parameter with the -F option.
+#### Using a Configuration File
+While many users are familiar with the sshd_config file, there is also a client configuration file for the ssh command. This defaults to `~/.ssh/config` but can also be specified as a parameter with the `-F` option.
 
-Host remoteserver
+`Host remoteserver
      HostName remoteserver.thematrix.io
      User neo
      Port 2112
      IdentityFile /home/test/.ssh/remoteserver.private_key
 
 Host *
-     Port 2222
+     Port 2222`
 In the above example ssh configuration file you can see two Host entries. The first is a specific host entry with Port 2112 configured, as well as a custom IdentifyFile and username. The second is a wildcard value of * that will match all hosts. Note that the first configuration option found will be used, so the most specific should be at the top of the configuration. More information is found in the man page (man ssh_config).
 
 The configuration file can save a lot of typing by including advanced configuration shortcuts any time a connection is made to particular hosts.
 
-Copy Files over SSH with SCP
+#### Copy Files over SSH with SCP
 The ssh client comes with two other very handy tools for moving files around over an encrypted ssh connection. The commands are scp and sftp. See examples below for basic usage. Note that many parameters for the ssh can be applied to these commands also.
 
-localhost:~$ scp mypic.png neo@remoteserver:/media/data/mypic_2.png
-In this example, the file mypic.png was copied to the remoteserver to file system location /media/data and renamed to mypic_2.png.
+`localhost:~$ scp mypic.png neo@remoteserver:/media/data/mypic_2.png`
+In this example, the file `mypic.png` was copied to the remoteserver to file system location `/media/data `and renamed to `mypic_2.png`.
 
 Don't forget the difference in the port parameter. This is a gotcha that hits everyone using scp on the command line. The port parameter is -P not -p as it is in the ssh client.!. You will forget, but don't worry everyone does.
 
-For those familiar with command line ftp, many of the commands are similar when using sftp. You can push, put and ls to your hearts desire.
+For those familiar with command line `ftp`, many of the commands are similar when using `sftp`. You can push, put and ls to your hearts desire.
 
-sftp neo@remoteserver
+`sftp neo@remoteserver`
 Practical Examples
 In many of these examples, we could achieve the result using several methods. As in all our tutorials and example command sheets, the focus is practical examples that get the job done.
-
 
 1. Proxy Traffic over SSH using SOCKS
 The SSH Proxy feature has been placed at number 1 for good reason. It is more powerful than many users realise giving you access to any system that the remote server can reach, using almost any application. The ssh client can tunnel traffic over the connection using a SOCKS proxy server with a quick one liner. A key thing to understand is that traffic to the remote systems will have a source of the remote server. For example in a web server log file.
 
-localhost:~$ ssh -D 8888 user@remoteserver
+`localhost:~$ ssh -D 8888 user@remoteserver`
 
-localhost:~$ netstat -pan | grep 8888
-tcp        0      0 127.0.0.1:8888       0.0.0.0:*               LISTEN      23880/ssh
+`localhost:~$ netstat -pan | grep 8888`
+`tcp        0      0 127.0.0.1:8888       0.0.0.0:*               LISTEN      23880/ssh`
 Here we start the socks proxy server running on TCP port 8888, the second command checks that the port is now listening. The 127.0.0.1 indicates the service is running on localhost only. We can use a slightly different command to listen on all interfaces including ethernet or wifi, this will allow other applications (browsers or other) on our network to connect to the ssh socks proxy service.
 
-localhost:~$ ssh -D 0.0.0.0:8888 user@remoteserver
+`localhost:~$ ssh -D 0.0.0.0:8888 user@remoteserver`
 Now we can configure our browser to connect to the socks proxy. In Firefox select preferences | general | network settings. Add the IP address and the port for the browser to connect to.
 
-SSH Socks Proxy with DNS
-
+#### SSH Socks Proxy with DNS
 Note the option at the bottom of the form to force browser DNS requests to also go over the socks proxy. If you are using the proxy to encrypt your web traffic on the local network you will definitely want to select this option so the DNS requests are also tunnelled over the SSH connection.
 
-Enable Socks Proxy on Chrome
+#### Enable Socks Proxy on Chrome
 Using a command line parameter when launching Chrome will use the socks proxy and also tunnel DNS requests from the browser over the socks5 proxy. Trust but verify, use tcpdump (tcpdump not port 22) to confirm the DNS requests are no longer visible.
 
-localhost:~$ google-chrome --proxy-server="socks5://192.168.1.10:8888"
-Using other applications with the Proxy
+`localhost:~$ google-chrome --proxy-server="socks5://192.168.1.10:8888"`
+
+#### Using other applications with the Proxy
 Keep in mind that there are many other applications that can utilise a socks proxy. A web browser is simply the most popular. Some applications will have configuration options for use of the proxy. Others may need some help by using a helper program that talks the socks protocol. An example of this is proxychains. Using this tool we can for example use Microsoft RDP over the socks proxy.
 
-localhost:~$ proxychains rdesktop $RemoteWindowsServer
+`localhost:~$ proxychains rdesktop $RemoteWindowsServer`
 The configuration options for the socks proxy are set in the proxychains configuration file.
 
 Hot Tip: Using remote desktop from Linux to Windows? Try the FreeRDP client. A more modern implementation than rdesktop with much smoother interaction.
-Use Case for the SSH Socks Proxy
+
+#### Use Case for the SSH Socks Proxy
 You are in a cafe or hotel having to use the somewhat sketchy WIFI. From our Laptop we run the ssh proxy locally and establish an ssh tunnel into our home network using a our local Rasberry Pi. Using the browser or other applications configured for the SOCKS proxy we can access any network services on our home network or browse to the Internet via our Home Network Connection. Everything between our Laptop and the Home Server (across the WIFI and Internet to home) is encrypted in the SSH tunnel.
 
 
 2. SSH Tunnel (port forward)
 In its simplest form an SSH tunnel opens a port on your local system that connects through to another port at the other end of the tunnel.
 
-localhost:~$ ssh  -L 9999:127.0.0.1:80 user@remoteserver
+`localhost:~$ ssh  -L 9999:127.0.0.1:80 user@remoteserver`
 Lets break down the -L parameter. Think of -L as the Local listening side. So in our example above the port 9999 is listening on localhost and port forwards through to port 80 on remoteserver, note that the 127.0.0.1 refers to localhost on the remote server!
 
 Lets take it up a notch. In this following example the port that is listening can be connected to from other hosts on the local network.
 
-localhost:~$ ssh  -L 0.0.0.0:9999:127.0.0.1:80 user@remoteserver
+`localhost:~$ ssh  -L 0.0.0.0:9999:127.0.0.1:80 user@remoteserver`
 In these examples the port we are connecting is a listening web server. It could also be a proxy server or any other TCP service.
 
 
 3. SSH Tunnel Forward to Secondary Remote host
 We can use the same options seen above to have the tunnel connect to another service running on a secondary system from the remote server.
 
-localhost:~$ ssh  -L 0.0.0.0:9999:10.10.10.10:80 user@remoteserver
+`localhost:~$ ssh  -L 0.0.0.0:9999:10.10.10.10:80 user@remoteserver`
 In this example we are forwarding the tunnel from remoteserver to the web server running on 10.10.10.10. The traffic from remoteserver -> 10.10.10.10 is no longer within the ssh tunnel. The web server on 10.10.10.10 will see remoteserver as the source of the web requests.
 
 
