@@ -1,4 +1,3 @@
-### TMUX STUFF
 
 ##### PREFIX 
 - A prefix in tmux is a signal sent to tmux to tell it to do something. The prefix command is `ctlr+b`.
