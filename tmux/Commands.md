@@ -34,4 +34,6 @@ To navigate between panes using the keyboard: `prefix` then arrow (up, down, lef
 
 ##### VIEWING TMUX INFO
 - Type `tmux list-sessions` or `tmux ls`
-- 
+
+
+
