@@ -1,4 +1,4 @@
-### SSH Secure Setup (key based not password based)
+### SSH Secure Setup using keys not passwords
 
 ##### High level summary
 1. Create a client SSH key with the `ssh-keygen` command
