@@ -29,7 +29,9 @@ The configuration file can save a lot of typing by including advanced configurat
 
 #### Copy Files over SSH with SCP
 The ssh client comes with two other very handy tools for moving files around over an encrypted ssh connection. The commands are scp and sftp. See examples below for basic usage. Note that many parameters for the ssh can be applied to these commands also.
+
 ```localhost:~$ scp mypic.png neo@remoteserver:/media/data/mypic_2.png```
+
 In this example, the file `mypic.png` was copied to the remoteserver to file system location `/media/data `and renamed to `mypic_2.png`.
 Don't forget the difference in the port parameter. This is a gotcha that hits everyone using scp on the command line. The port parameter is -P not -p as it is in the ssh client.!. You will forget, but don't worry everyone does.
 
@@ -48,6 +50,7 @@ tcp        0      0 127.0.0.1:8888       0.0.0.0:*               LISTEN      238
 ```
 
 Here we start the socks proxy server running on TCP port 8888, the second command checks that the port is now listening. The 127.0.0.1 indicates the service is running on localhost only. We can use a slightly different command to listen on all interfaces including ethernet or wifi, this will allow other applications (browsers or other) on our network to connect to the ssh socks proxy service.
+
 `localhost:~$ ssh -D 0.0.0.0:8888 user@remoteserver`
 
 Now we can configure our browser to connect to the socks proxy. In Firefox select preferences | general | network settings. Add the IP address and the port for the browser to connect to.
@@ -191,6 +194,7 @@ To go the other way, copying a remote folder to a local archive. Handy for quick
 If the client and remote server both have X installed. It is possible to run a GUI command remotely, with the Window appearing on your local desktop. This feature has been around since the beginning of time, but can still be very useful. Run a remote web browser or even the VMWawre Workstation console as I do in this example.
 
 ```localhost:~$ ssh -X remoteserver vmware```
+
 Requires X11Forwarding `ye`s in the `sshd_config`.
 
 
@@ -205,6 +209,7 @@ The example here uses gzip compression (-z) and archive mode (-a) that includes 
 The anonymised Tor Network can tunnel SSH traffic by using the torsocks command. The following command will proxy the ssh connection through the Tor network.
 
 ```localhost:~$ torsocks ssh myuntracableuser@remoteserver```
+
 Torsocks will use the localhost port 9050 to proxy traffic. As always when using tor serious consideration must be taken to understand what traffic is being tunnelled and other operational security (opsec) concerns. Where are your DNS requests going?
 
 
@@ -212,6 +217,7 @@ Torsocks will use the localhost port 9050 to proxy traffic. As always when using
 When using SSH to connect to your EC2 instance within Amazon you will need to use a private key. Download the key (extension .pem) from your Amazon EC2 control panel and change the permissions (chmod 400 my-ec2-ssh-key.pem. Keep this key somewhere safe or put it in your ~/.ssh/ folder.
 
 ```localhost:~$ ssh -i ~/.ssh/my-ec2-key.pem ubuntu@my-ec2-public```
+
 The -i parameter tells the ssh client to use this key. This would be an ideal example of where to use the ~/.ssh/config to configure the use of the key automatically when connecting to the ec2 host.
 
 ```Host my-ec2-public
@@ -223,6 +229,7 @@ The -i parameter tells the ssh client to use this key. This would be an ideal ex
 For all those vim users out there, this one can save some time. Using vim we can edit files over scp with one command. Using this method creates a file in /tmp on the local system and then copies it back once we write the file in vim.
 
 ```localhost:~$ vim scp://user@remoteserver//etc/hosts```
+
 Note the format is slightly different to regular scp. After the host we have a double `//`. This references the absolute path. A single slash will have a path that is relative to the users home directory.
 
 **warning** (netrw) cannot determine method (format: `protocol://[user@]hostname[:port]/[path]`)
@@ -265,7 +272,9 @@ See our 8 minute guide to getting started with Google Authenticator and SSH.
 #### 20. Bouncing through jump hosts with ssh and -J
 When network segmentation means you are jumping through multiple ssh hosts to get to a final destination network or host, this jump host shortcut might be just what you need. Requires OpenSSH version 7.3+.
 
+
 ```localhost:$ ssh -J host1,host2,host3 user@host4.internal```
+
 A key thing to understand here is that this is not the same as ssh host1 then user@host1:~$ ssh host2, the -J jump parameter uses forwarding trickery so that the localhost is establishing the session with the next host in the chain. So our localhost is authenticating with host4 in the above example; meaning our localhost keys are used and the session from localhost to host4 is encrypted end to end.
 
 To use this ability in the ssh_config use the ProxyJump configuration option. If you regularly have to jump through multiple hosts; use the config file and your alias to host4 will save you a lot of time.
