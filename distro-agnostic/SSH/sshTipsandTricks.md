@@ -1,4 +1,4 @@
-#### All credit goes to the original author (whoever they may be. Article copied from ssh examples article on HackerTarget.com
+#### All credit goes to the original author (whoever they may be). Article copied from [ssh examples](https://hackertarget.com/ssh-examples-tunnels/) article on HackerTarget.com
 #### First The Basics. 
 Breaking down the SSH Command Line
 The following ssh example command uses common parameters often seen when connecting to a remote SSH server.
