@@ -40,7 +40,7 @@
 
 ##### Creating basic keys with RSA (4096 bit key size)
 - `ssh-keygen -t rsa -b 4096`. Note that the key size should never be less than 4096 bits in size.
-- This tells the ssh daemon to create a key of type rsa and the keysize is 8192 bits (huge)
+- This tells the ssh daemon to create a key of type rsa and the keysize is 4096 bits (large)
 - Enter passphrase: (this must be very very strong, a nonsensical sentence is easy to remember and very hard to crack)
 - System will show a randomart image to let you know the passphrase is logged and key created
 
