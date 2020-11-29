@@ -1,7 +1,7 @@
 ### SSH Secure Setup using keys not passwords
 
 ##### High level summary
-1. Create a client SSH key with the `ssh-keygen` command
+1. Create a client SSH key with the `ssh-keygen` command and either large RSA keys or even more secure ed255519 keys.
 2. Make sure remote server can accept key based authentication
 3. Remove option for password based authentication (for greater security)
 4. Share the client public key with the server in the USERS home directory (`/.ssh/authorized_keys`)
@@ -76,7 +76,6 @@
 ##### Make the changes stick
 - `sudo service ssh restart`
 - verify with netstat -tulpn, should return a connection listing port 22 as LISTEN
-
 
 ##### Make sure password based authentication is BLOCKED and only key based ALLOWED
 - ssh to the remote machine
