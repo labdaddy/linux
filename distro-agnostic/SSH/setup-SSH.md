@@ -45,7 +45,7 @@
 - System will show a randomart image to let you know the passphrase is logged and key created
 
 #### Creating more secure keys with ed25519 algorithm
-- ssh-keygen -o -a 100 -t ed25519 -f ~/.ssh/id_ed25519 -C "john@example.com"
+- `ssh-keygen -o -a 100 -t ed25519 -f ~/.ssh/id_ed25519 -C "john@example.com"`
 - You’ll be asked to enter a passphrase for this key, use the strong one. You can also use the same passphrase like any of your old SSH keys. Breadkdown of flags:
 -o : Save the private-key using the new OpenSSH format rather than the PEM format. Actually, this option is implied when you specify the key type as ed25519.
 -a: It’s the numbers of KDF (Key Derivation Function) rounds. Higher numbers result in slower passphrase verification, increasing the resistance to brute-force password cracking should the private-key be stolen.
@@ -55,7 +55,7 @@
 
 
 #### To check all keys on the machine
-- for key in ~/.ssh/id_*; do ssh-keygen -l -f "${key}"; done | uniq
+- `for key in ~/.ssh/id_*; do ssh-keygen -l -f "${key}"; done | uniq`
 
 ##### To view the key info
 - `ls .ssh/`
