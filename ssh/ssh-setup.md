@@ -40,6 +40,27 @@
 ##### To check all keys on the machine
 - `for key in ~/.ssh/id_*; do ssh-keygen -l -f "${key}"; done | uniq`
 
+##### Creating basic keys with RSA (4096 bit key size)
+- `ssh-keygen -t rsa -b 4096`. Note that the key size should never be less than 4096 bits in size.
+- This tells the ssh daemon to create a key of type rsa and the keysize is 4096 bits (large)
+- Enter passphrase: This must be very very strong. A nonsensical sentence made up of five or more words is easy to remember and very hard to crack.
+- System will show a randomart image to let you know the passphrase is logged and key created
+
+##### Creating more secure keys with ed25519 algorithm
+- `ssh-keygen -o -a 100 -t ed25519 -f ~/.ssh/id_ed25519 -C "john@example.com"`
+- You’ll be asked to enter a passphrase for this key, use a strong one. You can also use the same passphrase like any of your old SSH keys but in either case this must be very very strong. A nonsensical sentence made up of five or more words is easy to remember and very hard to crack. Breakdown of flags:
+- -o : Save the private-key using the new OpenSSH format rather than the PEM format. Actually, this option is implied when you specify the key type as ed25519.
+- -a: Provides the number of KDF (Key Derivation Function) rounds. Higher numbers result in slower passphrase verification, increasing the resistance to brute-force password cracking should the private-key be stolen.
+- -t: Specifies the type of key to create, in our case the Ed25519.
+- -f: Specifies the filename of the generated key file. If you want it to be discovered automatically by the SSH agent, it must be stored in the default `.ssh` directory within your home directory.
+- -C: Specifies a comment. It’s purely informational and can be anything. But it’s usually filled with <login>@<hostname> who generated the key.
+
+##### Additional ed25519 information
+- The newly generated private key is stored at `~/.ssh/id_ed25519` and the public key at `~/.ssh/id_ed25519.pub`. 
+- Before adding your new private key to the SSH agent, make sure that the SSH agent is running by executing the following command: `eval "$(ssh-agent -s)"`
+- Then run the following command to add your newly generated Ed25519 key to SSH agent: `ssh-add ~/.ssh/id_ed25519`
+- Or if you want to add all of the available keys under the default .ssh directory, simply run: `ssh-add`
+
 ##### To view the key info
 - `ls .ssh/`
 - This should return: `id_rsa is_rsa.pub known_hosts`
@@ -82,23 +103,3 @@
 - enter the password. Server should respond with `Permission denied (publickey).`
 - ssh to this machine again and this time enter the passphrase you setup for the public key. Now the server should allow access.
 
-##### Creating basic keys with RSA (4096 bit key size)
-- `ssh-keygen -t rsa -b 4096`. Note that the key size should never be less than 4096 bits in size.
-- This tells the ssh daemon to create a key of type rsa and the keysize is 4096 bits (large)
-- Enter passphrase: This must be very very strong. A nonsensical sentence made up of five or more words is easy to remember and very hard to crack.
-- System will show a randomart image to let you know the passphrase is logged and key created
-
-##### Creating more secure keys with ed25519 algorithm
-- `ssh-keygen -o -a 100 -t ed25519 -f ~/.ssh/id_ed25519 -C "john@example.com"`
-- You’ll be asked to enter a passphrase for this key, use a strong one. You can also use the same passphrase like any of your old SSH keys but in either case this must be very very strong. A nonsensical sentence made up of five or more words is easy to remember and very hard to crack. Breakdown of flags:
-- -o : Save the private-key using the new OpenSSH format rather than the PEM format. Actually, this option is implied when you specify the key type as ed25519.
-- -a: Provides the number of KDF (Key Derivation Function) rounds. Higher numbers result in slower passphrase verification, increasing the resistance to brute-force password cracking should the private-key be stolen.
-- -t: Specifies the type of key to create, in our case the Ed25519.
-- -f: Specifies the filename of the generated key file. If you want it to be discovered automatically by the SSH agent, it must be stored in the default `.ssh` directory within your home directory.
-- -C: Specifies a comment. It’s purely informational and can be anything. But it’s usually filled with <login>@<hostname> who generated the key.
-
-##### Additional ed25519 information
-- The newly generated private key is stored at `~/.ssh/id_ed25519` and the public key at `~/.ssh/id_ed25519.pub`. 
-- Before adding your new private key to the SSH agent, make sure that the SSH agent is running by executing the following command: `eval "$(ssh-agent -s)"`
-- Then run the following command to add your newly generated Ed25519 key to SSH agent: `ssh-add ~/.ssh/id_ed25519`
-- Or if you want to add all of the available keys under the default .ssh directory, simply run: `ssh-add`
