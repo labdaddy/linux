@@ -6,40 +6,6 @@
 3. Remove option for password based authentication (for greater security)
 4. Share the client public key with the server in the USERS home directory (`/.ssh/authorized_keys`)
 
-##### Install SSH client and server
-- `sudo apt-get install openssh-client` or 
-- `sudo -yum -y install openssh-client`
-- `sudo apt-get install openssh-server` or 
-- `sudo yum -y install openssh-server `
-
-##### Start, stop, restart, check status and enable at startup - SSH
-
-**Start**
-- `sudo systemctl start ssh` or
-- `sudo service sshd start` or
-- `sudo /etc/init.d/ssh start`
-
-**Stop**
-- `sudo systemctl stop ssh` or
-- `sudo service sshd stop` or
-- `sudo /etc/init.d/ssh stop`
-
-**Restart**
-- `sudo systemctl restart ssh`
-- `sudo service ssh restart`
-- `sudo /etc/init.d/ssh restart`
-
-**Check Status**
-- `sudo systemctl status ssh`
-- `sudo service ssh status`
-- `sudo /etc/init.d/ssh status`
-
-**Enable at startup**
-- `sudo systemctl enable sshd`
-
-##### To check all keys on the machine
-- `for key in ~/.ssh/id_*; do ssh-keygen -l -f "${key}"; done | uniq`
-
 ##### Creating basic keys with RSA (4096 bit key size)
 - `ssh-keygen -t rsa -b 4096`. Note that the key size should never be less than 4096 bits in size.
 - This tells the ssh daemon to create a key of type rsa and the keysize is 4096 bits (large)
@@ -102,4 +68,40 @@
 - ssh to the remote machine
 - enter the password. Server should respond with `Permission denied (publickey).`
 - ssh to this machine again and this time enter the passphrase you setup for the public key. Now the server should allow access.
+
+### GENERAL USAGE
+
+##### Install SSH client and server
+- `sudo apt-get install openssh-client` or 
+- `sudo -yum -y install openssh-client`
+- `sudo apt-get install openssh-server` or 
+- `sudo yum -y install openssh-server `
+
+##### Start, stop, restart, check status and enable at startup - SSH
+
+**Start**
+- `sudo systemctl start ssh` or
+- `sudo service sshd start` or
+- `sudo /etc/init.d/ssh start`
+
+**Stop**
+- `sudo systemctl stop ssh` or
+- `sudo service sshd stop` or
+- `sudo /etc/init.d/ssh stop`
+
+**Restart**
+- `sudo systemctl restart ssh`
+- `sudo service ssh restart`
+- `sudo /etc/init.d/ssh restart`
+
+**Check Status**
+- `sudo systemctl status ssh`
+- `sudo service ssh status`
+- `sudo /etc/init.d/ssh status`
+
+**Enable at startup**
+- `sudo systemctl enable sshd`
+
+##### To check all keys on the machine
+- `for key in ~/.ssh/id_*; do ssh-keygen -l -f "${key}"; done | uniq`
 
