@@ -1,0 +1,12 @@
+#### Interrupt the boot process to gain access to the system
+- At the GRUB screen quickly press the `up` and `down` arrows to pause boot up
+- Highlight the one you want to work on
+- Press `e` to edit
+- Use down arrow to go to the line that starts with "Linux". Then move the cursor all the way to the end of the line.
+- Use the backspace key to delete the "quiet" and "rhgb" parts near the end of the line
+- Add `rd.break` then a space and add `enforcing=0`. Note the purpose of the `enforcing=0` bit is to disable SELinux because SELinux will be relabeled during this process we are engaging in here. The relabeling process will cause a very slow, very long reboot process. In other words, `enforcing=0` will save a lot of time.
+- Now press `ctrl` + `x` to restart the machine
+- The boot process will stop at: `switch_root:/#` At this prompt you need to enter `mount -o remount, rw /sysroot` and then press `enter`
+- Next enter `chroot /sysroot` (this will enable us to change the root password)
+- Next we have to change the root password with `passwd`
+- Enter the new password, enter it again
