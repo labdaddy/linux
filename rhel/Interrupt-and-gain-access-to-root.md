@@ -10,3 +10,12 @@
 - Next enter `chroot /sysroot` (this will enable us to change the root password)
 - Next we have to change the root password with `passwd`
 - Enter the new password, enter it again
+- Then enter `mount -o remount,ro /`
+- Then `exit`
+- Then `exit` again
+- Now system will reboot and then display the login screen
+- Login as root then open the terminal
+- Enter `restorecon /etc/shadow` (this restores the SELinux security context in the /etc/shadow directory)
+- Next enter `setenforce 1`
+- Then enter `getenforce`
+- Done
