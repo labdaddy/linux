@@ -15,4 +15,4 @@ network:
       routes:
         - to: default
           via: 192.168.1.1
-  version: 2~~~
+  version: 2
