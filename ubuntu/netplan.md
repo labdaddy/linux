@@ -16,3 +16,12 @@ network:
         - to: default
           via: 192.168.1.1
   version: 2
+  
+ Make sure the config is applied:
+ `$ sudo netplan apply`
+ 
+ Then check the IP address on the NIC: 
+ `$ ip addr show ens33`
+ 
+ Confirm the route was updated:
+ `$ ip route show`
