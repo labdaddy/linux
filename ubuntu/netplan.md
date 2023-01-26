@@ -3,7 +3,8 @@ Ubuntu 22 and later uses netplan to configure network settings.
 A template will be very helpful in prepping this.
 
 ## TEMPLATE:
-~~~# This is the network config written by 'subiquity'
+```
+# This is the network config written by 'subiquity'
 network:
   renderer: networkd
   ethernets:
