@@ -17,6 +17,10 @@ network:
           via: 192.168.1.1
   version: 2
   
+  
+  
+  
+  
  Make sure the config is applied:
  `$ sudo netplan apply`
  
