@@ -22,10 +22,16 @@ network:
   
 
 Make sure the config is applied:
- `$ sudo netplan apply`
+```
+$ sudo netplan apply
+```
  
 Then check the IP address on the NIC: 
- `$ ip addr show ens33`
+```
+$ ip addr show ens33
+```
  
 Confirm the route was updated:
- `$ ip route show`
+```
+$ ip route show
+```
