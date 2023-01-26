@@ -9,9 +9,9 @@ network:
   ethernets:
     ens33:
       addresses:
-        - 192.168.1.247/24
+        - 192.168.1.42/24
       nameservers:
-        addresses: [4.2.2.2, 8.8.8.8]
+        addresses: [192.168.1.1, 8.8.8.8]
       routes:
         - to: default
           via: 192.168.1.1
