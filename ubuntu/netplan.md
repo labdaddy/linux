@@ -11,12 +11,12 @@ network:
     ens33:
       dhcp: false
       addresses:
-        - 192.168.1.42/24
+        - 192.168.25.12/24
       nameservers:
-        addresses: [192.168.1.1, 8.8.8.8]
+        addresses: [192.168.25.1, .1.1.1.1]
       routes:
         - to: default
-          via: 192.168.1.1
+          via: 192.168.25.1
   version: 2
   ```
   
