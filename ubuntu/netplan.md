@@ -13,7 +13,7 @@ network:
       addresses:
         - 192.168.25.12/24
       nameservers:
-        addresses: [192.168.25.1, .1.1.1.1]
+        addresses: [192.168.25.1,1.1.1.1]
       routes:
         - to: default
           via: 192.168.25.1
