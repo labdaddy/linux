@@ -9,6 +9,7 @@ network:
   renderer: networkd
   ethernets:
     ens33:
+      dhcp: false
       addresses:
         - 192.168.1.42/24
       nameservers:
