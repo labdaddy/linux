@@ -8,11 +8,11 @@ A template will be very helpful in prepping this.
 network:
   renderer: networkd
   ethernets:
-    ens160:
+    [adaptor name here]:
       addresses:
-        - 192.168.25.100/24
+        - [IP address here with /CIDR], whole thing inside square brackets
       nameservers:
-        addresses: [192.168.25.1, 1.1.1.1]
+        addresses: [IP address here with /CIDR], whole thing inside square brackets
       routes:
         - to: default
           via: 192.168.25.1
