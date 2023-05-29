@@ -8,12 +8,11 @@ A template will be very helpful in prepping this.
 network:
   renderer: networkd
   ethernets:
-    ens33:
-      dhcp: false
+    ens160:
       addresses:
-        - 192.168.25.12/24
+        - 192.168.25.100/24
       nameservers:
-        addresses: [192.168.25.1,1.1.1.1]
+        addresses: [192.168.25.1, 1.1.1.1]
       routes:
         - to: default
           via: 192.168.25.1
